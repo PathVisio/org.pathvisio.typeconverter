@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<project name="org.pathvisio.typeconverter" default="jar" basedir=".">
+
+  	<property name="pathvisio.dir" value="../.."/>
+
+	<!-- embedded jars are embedded in the resulting bundle -->
+	<path id="embed.jars">
+		<!-- None -->
+	</path>
+
+  	<path id="project.class.path">
+		<fileset dir="${pathvisio.dir}/modules">
+			<include name="org.pathvisio.core.jar"/>
+			<include name="org.pathvisio.gui.jar"/>
+			<include name="org.pathvisio.desktop.jar"/>
+		</fileset>
+		<fileset dir="${pathvisio.dir}/lib">
+			<include name="felix.jar"/>
+		</fileset>
+ 	 </path>
+  
+  	<import file="${pathvisio.dir}/plugin-common.xml" />
+</project>
