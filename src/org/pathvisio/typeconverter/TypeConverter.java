@@ -56,7 +56,7 @@ public class TypeConverter implements Plugin, PathwayElementMenuHook {
 	public void pathwayElementMenuHook(VPathwayElement e, JPopupMenu menu) {
 		JMenu refMenu = new JMenu("Convert type");
 		
-		System.out.println(e.getClass());
+//		System.out.println(e.getClass());
 		if(e instanceof Label) {
 			if(e instanceof Graphics) {
 				LabelToDataNode action1 = new LabelToDataNode((Graphics)e, DataNodeType.GENEPRODUCT);
@@ -103,6 +103,8 @@ public class TypeConverter implements Plugin, PathwayElementMenuHook {
 				DataNodeToDataNode action5 = new DataNodeToDataNode((Graphics)e, DataNodeType.RNA);
 				refMenu.add(action5);
 			}
+			DataNodeToLabel action6 = new DataNodeToLabel((Graphics)e, ObjectType.LABEL );
+			refMenu.add(action6);
 			menu.add(refMenu);
 		}
 	}
